@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Build Project (MinGW C++)",
+            "command": "c:\\msys64\\ucrt64\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "-std=c++17",
+                "${workspaceFolder}\\Data\\DAOs\\DAOs.cpp",
+                "${workspaceFolder}\\Data\\DataMappers\\DataMappers.cpp",
+                "${workspaceFolder}\\Data\\DataSources\\Remote\\Database.cpp",
+                "${workspaceFolder}\\Data\\Repo\\Repositories.cpp",
+                "${workspaceFolder}\\Domain\\LocalStorage\\DataContainer.cpp",
+                "${workspaceFolder}\\Presentation\\CLI\\CLI.cpp",
+                "${workspaceFolder}\\main.cpp",
+                "-o",
+                "${workspaceFolder}\\build\\app.exe",
+                "-lodbc32"
+            ],
+                        "options": {
+                "cwd": "${workspaceFolder}",
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": [
+                        "/C"
+                    ]
+                }
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Compiles all .cpp files into build/app.exe"
+        } 
+    ]
+}
